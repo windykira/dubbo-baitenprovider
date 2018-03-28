@@ -27,14 +27,6 @@
         </property>
     </bean>
 
-    <bean name="handlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" >
-        <property name="messageConverters">
-            <list >
-                <ref bean="mappingJacksonHttpMessageConverter" />
-            </list>
-        </property>
-    </bean>
-
     <bean name="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
         <!-- 只会拦截@RequestMapping的URL
         <property name="interceptors">
@@ -44,6 +36,12 @@
          </property> -->
     </bean>
 
-
+    <bean name="handlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" >
+        <property name="messageConverters">
+            <list >
+                <ref bean="mappingJacksonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
 
 </beans>
